@@ -1,0 +1,13 @@
+{
+  "name": "social-link-preview",
+  "version": "1.0.0",
+  "description": "Paste a URL, instantly see how it looks on 8 platforms. No signup required.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "express": "^4.21.0"
+  }
+}

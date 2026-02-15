@@ -1,0 +1,841 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: #fafafa;
+  --text: #1d1d1f;
+  --text-secondary: #86868b;
+  --border: #e5e5e7;
+  --radius: 12px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text",
+    "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+html {
+  font-family: var(--font);
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  min-height: 100vh;
+}
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 80px 24px 120px;
+}
+
+/* Header */
+header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Input */
+#url-form {
+  margin-bottom: 32px;
+}
+
+.input-row {
+  display: flex;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#url-input {
+  flex: 1;
+  height: 52px;
+  padding: 0 20px;
+  font-size: 16px;
+  font-family: var(--font);
+  border: 1.5px solid var(--border);
+  border-radius: 14px;
+  background: #fff;
+  color: var(--text);
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#url-input::placeholder {
+  color: #c7c7cc;
+}
+
+#url-input:focus {
+  border-color: #007aff;
+  box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.12);
+}
+
+#submit-btn {
+  height: 52px;
+  padding: 0 28px;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: var(--font);
+  color: #fff;
+  background: #007aff;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  white-space: nowrap;
+}
+
+#submit-btn:hover {
+  background: #0071e3;
+}
+
+#submit-btn:active {
+  transform: scale(0.97);
+}
+
+#submit-btn:disabled {
+  background: #c7c7cc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Demo hint chip */
+#url-form {
+  position: relative;
+}
+
+#demo-hint {
+  position: absolute;
+  top: -10px;
+  right: 0;
+  transform: translateY(-100%);
+  font-size: 12px;
+  color: #fff;
+  background: #ff9f0a;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(255, 159, 10, 0.3);
+  animation: hint-pulse 2s ease-in-out infinite;
+}
+
+#demo-hint strong {
+  font-weight: 700;
+}
+
+@keyframes hint-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+/* Error */
+.error {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.error .error-cat {
+  width: 240px;
+  max-width: 100%;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.error .error-text {
+  color: #ff3b30;
+  font-size: 15px;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.error .error-hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+.error .error-hint a {
+  color: #007aff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.error .error-hint a:hover {
+  text-decoration: underline;
+}
+
+/* Loading */
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 32px 0;
+  color: var(--text-secondary);
+  font-size: 15px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2.5px solid var(--border);
+  border-top-color: #007aff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Hidden attribute override — CSS display values override [hidden] */
+[hidden] {
+  display: none !important;
+}
+
+/* Cards grid */
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  margin-top: 16px;
+}
+
+.card-wrapper {
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.platform-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  margin-bottom: 10px;
+}
+
+.platform-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   Google
+   ============================================ */
+.google-card {
+  padding: 16px 0;
+}
+
+.google-card .google-url {
+  font-size: 14px;
+  color: #202124;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.google-card .google-url .google-favicon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+}
+
+.google-card .google-url .google-domain {
+  color: #4d5156;
+  font-size: 12px;
+}
+
+.google-card .google-title {
+  font-size: 20px;
+  font-weight: 400;
+  color: #1a0dab;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.google-card .google-title:hover {
+  text-decoration: underline;
+}
+
+.google-card .google-desc {
+  font-size: 14px;
+  color: #4d5156;
+  line-height: 1.58;
+}
+
+/* ============================================
+   Facebook
+   ============================================ */
+.facebook-card {
+  background: #242526;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #3a3b3c;
+}
+
+.facebook-card .fb-image {
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+  display: block;
+  background: #3a3b3c;
+}
+
+.facebook-card .fb-info {
+  padding: 12px 14px;
+}
+
+.facebook-card .fb-domain {
+  font-size: 13px;
+  color: #b0b3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+  margin-bottom: 4px;
+}
+
+.facebook-card .fb-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: #e4e6eb;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.facebook-card .fb-desc {
+  font-size: 14px;
+  color: #b0b3b8;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   X / Twitter
+   ============================================ */
+.x-card {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid #2f3336;
+  background: #000;
+}
+
+.x-card .x-image {
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+  display: block;
+  background: #2f3336;
+}
+
+.x-card.x-summary {
+  display: flex;
+  flex-direction: row;
+}
+
+.x-card.x-summary .x-image {
+  width: 130px;
+  height: 130px;
+  aspect-ratio: 1;
+  flex-shrink: 0;
+}
+
+.x-card.x-summary .x-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.x-card .x-info {
+  padding: 12px 14px;
+}
+
+.x-card .x-domain {
+  font-size: 13px;
+  color: #71767b;
+  margin-bottom: 2px;
+}
+
+.x-card .x-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #e7e9ea;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.x-card .x-desc {
+  font-size: 14px;
+  color: #71767b;
+  line-height: 1.3;
+  margin-top: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   LinkedIn
+   ============================================ */
+.linkedin-card {
+  background: #fff;
+  border-radius: 2px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+}
+
+.linkedin-card .li-image {
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+  display: block;
+  background: #f3f2ef;
+}
+
+.linkedin-card .li-info {
+  padding: 10px 12px;
+  background: #f3f2ef;
+}
+
+.linkedin-card .li-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.9);
+  line-height: 1.3;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.linkedin-card .li-domain {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* ============================================
+   Discord
+   ============================================ */
+.discord-msg {
+  background: #313338;
+  border-radius: 8px;
+  padding: 16px 16px 16px 72px;
+  position: relative;
+  font-family: "gg sans", "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.discord-msg .dc-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  background: #5865f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.discord-msg .dc-avatar svg {
+  width: 24px;
+  height: 24px;
+}
+
+.discord-msg .dc-msg-header {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.discord-msg .dc-username {
+  font-size: 15px;
+  font-weight: 500;
+  color: #f2f3f5;
+}
+
+.discord-msg .dc-timestamp {
+  font-size: 12px;
+  color: #949ba4;
+  font-weight: 400;
+}
+
+.discord-msg .dc-msg-domain {
+  font-size: 15px;
+  color: #b5bac1;
+  margin-bottom: 1px;
+  line-height: 1.4;
+}
+
+.discord-msg .dc-msg-url {
+  font-size: 15px;
+  color: #00a8fc;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.discord-card {
+  background: #2b2d31;
+  border-radius: 4px;
+  padding: 8px 16px 16px 12px;
+  border-left: 4px solid #5865f2;
+  max-width: 432px;
+  margin-top: 4px;
+}
+
+.discord-card .dc-site {
+  font-size: 12px;
+  font-weight: 400;
+  color: #b5bac1;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.discord-card .dc-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #00a8fc;
+  line-height: 1.25;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.discord-card .dc-title:hover {
+  text-decoration: underline;
+}
+
+.discord-card .dc-desc {
+  font-size: 14px;
+  color: #dbdee1;
+  line-height: 1.43;
+  margin-bottom: 12px;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.discord-card .dc-image {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  display: block;
+  background: #1e1f22;
+}
+
+/* ============================================
+   Slack
+   ============================================ */
+.slack-card {
+  background: #fff;
+  border-radius: 4px;
+  padding: 10px 16px;
+  border-left: 4px solid #e0e0e0;
+  border-top: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.slack-card .sl-site {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1d1c1d;
+  margin-bottom: 4px;
+}
+
+.slack-card .sl-title {
+  font-size: 15px;
+  font-weight: 400;
+  color: #1264a3;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.slack-card .sl-title:hover {
+  text-decoration: underline;
+}
+
+.slack-card .sl-desc {
+  font-size: 14px;
+  color: #616061;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.slack-card .sl-image {
+  max-width: 360px;
+  max-height: 200px;
+  border-radius: 4px;
+  display: block;
+}
+
+/* ============================================
+   iMessage
+   ============================================ */
+.imessage-card {
+  background: #262628;
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 300px;
+}
+
+.imessage-card .im-image {
+  width: 100%;
+  aspect-ratio: 1.5 / 1;
+  object-fit: cover;
+  display: block;
+  background: #3a3a3c;
+}
+
+.imessage-card .im-info {
+  padding: 10px 14px;
+}
+
+.imessage-card .im-title {
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.imessage-card .im-domain {
+  font-size: 13px;
+  color: #98989e;
+}
+
+/* ============================================
+   WhatsApp
+   ============================================ */
+.whatsapp-card {
+  background: #1d2a30;
+  border-radius: 8px;
+  overflow: hidden;
+  max-width: 340px;
+}
+
+.whatsapp-card .wa-image {
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+  display: block;
+  background: #2a3942;
+}
+
+.whatsapp-card .wa-info {
+  padding: 8px 10px;
+}
+
+.whatsapp-card .wa-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #e9edef;
+  line-height: 1.3;
+  margin-bottom: 2px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.whatsapp-card .wa-desc {
+  font-size: 13px;
+  color: #8696a0;
+  line-height: 1.3;
+  margin-bottom: 4px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.whatsapp-card .wa-domain {
+  font-size: 12px;
+  color: #8696a0;
+}
+
+/* ============================================
+   No-image fallbacks
+   ============================================ */
+.no-image {
+  display: none !important;
+}
+
+/* ============================================
+   Responsive
+   ============================================ */
+@media (max-width: 600px) {
+  main {
+    padding: 48px 16px 80px;
+  }
+
+  h1 {
+    font-size: 26px;
+  }
+
+  .subtitle {
+    font-size: 15px;
+  }
+
+  .input-row {
+    flex-direction: column;
+  }
+
+  #submit-btn {
+    width: 100%;
+  }
+
+  #demo-hint {
+    right: auto;
+    left: 50%;
+    transform: translate(-50%, -100%);
+  }
+
+  .card-wrapper {
+    max-width: 100%;
+  }
+
+  .x-card.x-summary .x-image {
+    width: 100px;
+    height: 100px;
+  }
+
+  .imessage-card,
+  .whatsapp-card {
+    max-width: 100%;
+  }
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+.site-footer {
+  margin-top: 80px;
+  border-top: 1px solid var(--border);
+  padding: 40px 24px 60px;
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 48px;
+}
+
+.footer-credit {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.footer-credit a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-credit a:hover {
+  text-decoration: underline;
+}
+
+.footer-github {
+  color: var(--text-secondary);
+  transition: color 0.2s;
+}
+
+.footer-github:hover {
+  color: var(--text);
+}
+
+.footer-contact a {
+  font-size: 14px;
+  color: var(--text-secondary);
+  text-decoration: none;
+}
+
+.footer-contact a:hover {
+  color: var(--text);
+}
+
+.footer-seo {
+  color: #c7c7cc;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-seo h2 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #a1a1a6;
+  margin-bottom: 8px;
+}
+
+.footer-seo h3 {
+  font-size: 12px;
+  font-weight: 500;
+  color: #a1a1a6;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.footer-seo p {
+  margin-bottom: 8px;
+}

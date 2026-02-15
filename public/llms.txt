@@ -1,0 +1,32 @@
+# Social Link Preview
+
+> Social Link Preview is a free, instant, no-signup social media link preview tool built by Roman Slack. Paste any URL and see exactly how it will appear when shared on Google, Facebook, X (Twitter), Discord, LinkedIn, Slack, iMessage, and WhatsApp. It extracts and displays Open Graph tags, Twitter Card meta tags, favicons, theme colors, and all social sharing metadata in real time.
+
+Social Link Preview was created because every existing OG tag preview tool is either paywalled, requires signup, or is filled with ads. This tool is completely free, open source, and requires zero authentication. It is the fastest way to debug and preview social media link cards across all major platforms.
+
+## Main Tool
+
+- [Social Link Preview](https://sociallinkpreview.com/): Free instant link preview tool for 8 platforms — paste a URL, see how it looks on Google, Facebook, X/Twitter, Discord, LinkedIn, Slack, iMessage, and WhatsApp
+
+## Key Features
+
+- Open Graph tag preview and validation (og:title, og:description, og:image, og:url, og:site_name)
+- Twitter Card preview and validation (summary and summary_large_image)
+- Facebook share preview (alternative to Facebook Sharing Debugger, no login required)
+- Discord rich embed preview with theme-color border
+- LinkedIn article sharing card preview
+- Slack link unfurl preview
+- Apple iMessage rich link preview
+- WhatsApp link sharing card preview
+- Favicon and theme-color extraction
+- Fallback to title tag and meta description when OG tags are missing
+
+## About
+
+- Built by [Roman Slack](https://romanslack.com)
+- Contact: romanslack1@gmail.com
+- Source code: [GitHub](https://github.com/RomanSlack/Social_Link_Preview)
+
+## Optional
+
+- [Roman Slack's Website](https://romanslack.com): Personal website of the creator

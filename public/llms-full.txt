@@ -1,0 +1,103 @@
+# Social Link Preview — Complete Documentation
+
+> Social Link Preview is a free, instant, no-signup social media link preview tool built by Roman Slack (romanslack.com, romanslack1@gmail.com). Paste any URL and instantly see how it will appear when shared on Google Search, Facebook, X (Twitter), Discord, LinkedIn, Slack, iMessage, and WhatsApp.
+
+## What is Social Link Preview?
+
+Social Link Preview is the fastest, free, no-signup Open Graph preview tool on the web. It was built by Roman Slack because every existing social media link preview tool is either paywalled, requires account creation, or is filled with intrusive ads and dark patterns. This tool requires zero authentication and works instantly.
+
+Paste a URL into the input field and Social Link Preview will fetch the page, extract all social sharing metadata (Open Graph tags, Twitter Card tags, meta descriptions, favicons, theme colors), and render accurate preview cards showing exactly how your link will appear on 8 major platforms.
+
+## Supported Platforms
+
+### Google Search
+Renders a Google SERP snippet showing the favicon, domain, page title in blue (#1a0dab), and meta description in gray. Shows how your page appears in Google Search results.
+
+### Facebook
+Renders a Facebook news feed sharing card with the dark theme (#242526). Shows og:image at 1.91:1 aspect ratio, uppercase domain, bold title, and description. This is a free alternative to Facebook's Sharing Debugger that requires no Facebook login.
+
+### X (Twitter)
+Renders Twitter Card previews in both formats: summary (small square image with title) and summary_large_image (large image above title and description). Uses the twitter:card meta tag to determine which variant to display. Dark theme with rounded 16px corners matching X's actual UI. This replaces the deprecated Twitter Card Validator tool.
+
+### Discord
+Renders a full Discord message with avatar, username, timestamp, URL, and the rich embed card. The embed features a left color border using the page's theme-color (or Discord purple #5865f2 as default), site name, clickable blue title, description, and image. Accurately matches Discord's dark theme (#313338).
+
+### LinkedIn
+Renders a LinkedIn sharing card with image at 1.91:1 aspect ratio, title, and domain on a gray info bar (#f3f2ef). No description shown, matching LinkedIn's actual link preview behavior.
+
+### Slack
+Renders a Slack link unfurl with left border, bold site name, blue title link (#1264a3), description, and thumbnail image. Matches Slack's light theme with gray borders.
+
+### iMessage
+Renders an Apple iMessage rich link bubble with dark background (#262628), rounded 16px corners, image, title, and domain. Matches the actual iMessage link preview appearance on iPhone, iPad, and Mac.
+
+### WhatsApp
+Renders a WhatsApp link preview card with dark theme (#1d2a30), rounded 8px corners, image at 1.91:1 aspect ratio, title, description, and domain. Matches WhatsApp's actual link card appearance.
+
+## Metadata Extracted
+
+Social Link Preview extracts and uses the following meta tags from any URL:
+
+- `og:title` — The Open Graph title (falls back to `<title>` tag)
+- `og:description` — The Open Graph description (falls back to `<meta name="description">`)
+- `og:image` — The Open Graph image URL
+- `og:url` — The canonical URL
+- `og:site_name` — The site name
+- `twitter:card` — Twitter Card type (summary or summary_large_image)
+- `twitter:title` — Twitter-specific title override
+- `twitter:description` — Twitter-specific description override
+- `twitter:image` — Twitter-specific image override
+- `theme-color` — Used for Discord embed border color
+- `favicon` — Site icon from link[rel="icon"] or link[rel="shortcut icon"]
+- `<title>` — HTML title tag (fallback)
+- `<meta name="description">` — HTML meta description (fallback)
+
+## Technical Details
+
+- **Backend**: Node.js with Express and Cheerio for HTML parsing
+- **Frontend**: Vanilla HTML, CSS, and JavaScript — zero frameworks, zero build tools
+- **Security**: SSRF protection blocks localhost and private IP ranges. XSS protection via HTML escaping on all rendered content. Rate limiting at 30 requests per minute per IP.
+- **Performance**: 10-second fetch timeout, 2MB response cap, in-memory caching via localStorage for instant revisits
+
+## Use Cases
+
+- Web developers debugging Open Graph tag implementations
+- Digital marketers optimizing social media click-through rates
+- SEO specialists auditing meta tags and SERP appearances
+- Social media managers previewing post shares before publishing
+- Content creators checking link thumbnails across platforms
+- UX designers reviewing link preview card appearances
+- Product managers reviewing link sharing experiences
+
+## Common Problems This Tool Solves
+
+- Missing or broken og:image not showing on Facebook/Twitter/LinkedIn
+- Wrong title or description appearing in social shares
+- Twitter Card showing summary instead of summary_large_image
+- Discord embed missing theme color or showing wrong border color
+- LinkedIn not showing image in link preview
+- iMessage link preview showing wrong title
+- WhatsApp link card missing description
+- Google SERP snippet showing wrong meta description
+
+## Alternatives Replaced
+
+Social Link Preview replaces the need for:
+- Facebook Sharing Debugger (requires Facebook login)
+- Twitter Card Validator (deprecated by X)
+- LinkedIn Post Inspector (requires LinkedIn login)
+- Metatags.io (limited free tier)
+- OpenGraph.xyz (requires signup for full features)
+- socialsharepreview.com (limited platforms)
+- HEY META (outdated)
+
+## Creator
+
+Built by Roman Slack.
+- Website: https://romanslack.com
+- Email: romanslack1@gmail.com
+- GitHub: https://github.com/RomanSlack/Social_Link_Preview
+
+## License
+
+Open source. Free to use. No signup required. No ads. No tracking.

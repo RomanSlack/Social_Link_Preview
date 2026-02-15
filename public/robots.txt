@@ -1,0 +1,109 @@
+# ===========================================
+# Traditional Search Engine Crawlers
+# ===========================================
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# ===========================================
+# OpenAI Crawlers
+# ===========================================
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# ===========================================
+# Anthropic (Claude) Crawlers
+# ===========================================
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: claude-web
+Allow: /
+
+# ===========================================
+# Google AI
+# ===========================================
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Google-CloudVertexBot
+Allow: /
+
+User-agent: Gemini-Deep-Research
+Allow: /
+
+# ===========================================
+# Apple AI
+# ===========================================
+User-agent: Applebot-Extended
+Allow: /
+
+# ===========================================
+# Perplexity
+# ===========================================
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+# ===========================================
+# Meta AI
+# ===========================================
+User-agent: Meta-ExternalAgent
+Allow: /
+
+User-agent: Meta-WebIndexer
+Allow: /
+
+# ===========================================
+# Other AI Crawlers
+# ===========================================
+User-agent: Amazonbot
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
+User-agent: Bytespider
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# ===========================================
+# Default: Allow All
+# ===========================================
+User-agent: *
+Allow: /
+
+Sitemap: https://sociallinkpreview.com/sitemap.xml
