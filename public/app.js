@@ -26,12 +26,26 @@
 
   // Platform render functions
   function renderGoogle(m) {
-    const favicon = m.favicon
-      ? `<img class="google-favicon" src="${escapeHtml(m.favicon)}" onerror="this.style.display='none'">`
+    const faviconSrc = m.favicon ? escapeHtml(m.favicon) : '';
+    const tabFavicon = faviconSrc
+      ? `<img class="tab-favicon" src="${faviconSrc}" onerror="this.style.display='none'">`
+      : `<svg class="tab-favicon-fallback" viewBox="0 0 16 16"><circle cx="8" cy="8" r="7" fill="#ddd"/></svg>`;
+    const serpFavicon = faviconSrc
+      ? `<img class="google-favicon" src="${faviconSrc}" onerror="this.style.display='none'">`
       : '';
-    return `<div class="google-card">
+    return `<div class="chrome-tab">
+      <div class="tab-bar">
+        <div class="tab-dots"><span></span><span></span><span></span></div>
+        <div class="tab-active">
+          ${tabFavicon}
+          <span class="tab-title">${escapeHtml(truncate(m.title, 32))}</span>
+          <svg class="tab-close" viewBox="0 0 12 12"><path d="M3 3l6 6M9 3l-6 6" stroke="#5f6368" stroke-width="1.2" stroke-linecap="round"/></svg>
+        </div>
+      </div>
+    </div>
+    <div class="google-card">
       <div class="google-url">
-        ${favicon}
+        ${serpFavicon}
         <span class="google-domain">${escapeHtml(m.domain)}</span>
       </div>
       <div class="google-title">${escapeHtml(truncate(m.title, 70))}</div>
