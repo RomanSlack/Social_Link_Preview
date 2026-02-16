@@ -236,6 +236,116 @@
         <div class="card-content"></div>
       </div>
     </section>
+
+    <section class="content-section">
+      <h2>How It Works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>Paste your URL</h3>
+          <p>Enter any public URL — a blog post, landing page, product page, or homepage. We'll auto-add https:// if you forget.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>We extract metadata</h3>
+          <p>Our server fetches your page and pulls every Open Graph tag, Twitter Card tag, favicon, theme color, and meta description.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>See all 8 previews</h3>
+          <p>Instantly see accurate, platform-specific preview cards for Google, Discord, X, Facebook, LinkedIn, Slack, iMessage, and WhatsApp.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>Supported Platforms</h2>
+      <div class="platform-grid">
+        <div class="platform-item">
+          <strong>Google Search</strong>
+          <p>See your SERP snippet with blue title link, green URL, and gray description — exactly how Google renders it.</p>
+        </div>
+        <div class="platform-item">
+          <strong>Discord</strong>
+          <p>Full message embed with theme-color border, site name, linked title, description, and image preview.</p>
+        </div>
+        <div class="platform-item">
+          <strong>X (Twitter)</strong>
+          <p>Both summary and summary_large_image card types with accurate dark-theme rendering.</p>
+        </div>
+        <div class="platform-item">
+          <strong>Facebook</strong>
+          <p>Dark news feed card with og:image, uppercase domain, bold title, and description.</p>
+        </div>
+        <div class="platform-item">
+          <strong>LinkedIn</strong>
+          <p>Article sharing card with image and gray info bar, matching LinkedIn's actual layout.</p>
+        </div>
+        <div class="platform-item">
+          <strong>Slack</strong>
+          <p>Link unfurl with bold site name, blue title, description, and thumbnail.</p>
+        </div>
+        <div class="platform-item">
+          <strong>iMessage</strong>
+          <p>Apple's rich link bubble with image, title, and domain in a dark rounded card.</p>
+        </div>
+        <div class="platform-item">
+          <strong>WhatsApp</strong>
+          <p>Compact link card with image, title, description, and domain in WhatsApp's dark theme.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section">
+      <h2>What Tags Does It Check?</h2>
+      <p class="section-intro">Social Link Preview extracts and validates all the meta tags that control how your links appear when shared:</p>
+      <div class="tag-list">
+        <div class="tag-group">
+          <h3>Open Graph Tags</h3>
+          <code>og:title</code> <code>og:description</code> <code>og:image</code> <code>og:url</code> <code>og:site_name</code> <code>og:type</code>
+        </div>
+        <div class="tag-group">
+          <h3>Twitter Card Tags</h3>
+          <code>twitter:card</code> <code>twitter:title</code> <code>twitter:description</code> <code>twitter:image</code>
+        </div>
+        <div class="tag-group">
+          <h3>Other Metadata</h3>
+          <code>title</code> <code>meta description</code> <code>favicon</code> <code>theme-color</code> <code>canonical URL</code>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section faq-section">
+      <h2>Frequently Asked Questions</h2>
+      <details>
+        <summary>What is Social Link Preview?</summary>
+        <p>Social Link Preview is a free, no-signup tool that lets you paste any URL and instantly see how it will appear when shared on Google, Facebook, X (Twitter), Discord, LinkedIn, Slack, iMessage, and WhatsApp. It extracts Open Graph tags, Twitter Card meta tags, favicons, and theme colors to render accurate platform-specific preview cards.</p>
+      </details>
+      <details>
+        <summary>Is it really free? Do I need to sign up?</summary>
+        <p>Yes, it's completely free. No signup, no email, no account, no paywall. We built this because every other preview tool forces you through hoops. This one just works.</p>
+      </details>
+      <details>
+        <summary>Can I use this instead of Facebook's Sharing Debugger?</summary>
+        <p>Yes. Social Link Preview shows you exactly how your link will appear on Facebook without requiring a Facebook account or login. Plus you get 7 other platforms at the same time.</p>
+      </details>
+      <details>
+        <summary>Does this replace the Twitter Card Validator?</summary>
+        <p>Yes. Twitter (now X) deprecated their official Card Validator. Social Link Preview shows both summary and summary_large_image card formats, so you can validate your twitter:card, twitter:title, twitter:description, and twitter:image tags.</p>
+      </details>
+      <details>
+        <summary>What if my preview looks wrong?</summary>
+        <p>If a preview is missing an image or showing the wrong title, your page is likely missing or has incorrect Open Graph meta tags. Check that your HTML includes og:title, og:description, and og:image tags in the &lt;head&gt; section. Our tool shows exactly what each platform will see, so you can debug the issue before sharing.</p>
+      </details>
+      <details>
+        <summary>Can I preview localhost or local development URLs?</summary>
+        <p>Not directly — our server can't reach your local machine. Use a free tunneling tool like <a href="https://ngrok.com/docs/getting-started/">ngrok</a> to create a public URL for your local server, then paste that URL here.</p>
+      </details>
+      <details>
+        <summary>Who built this?</summary>
+        <p>Social Link Preview was created by <a href="https://romanslack.com">Roman Slack</a>. The source code is open source on <a href="https://github.com/RomanSlack/Social_Link_Preview">GitHub</a>.</p>
+      </details>
+    </section>
   </main>
 
   <footer class="site-footer">

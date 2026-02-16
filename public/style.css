@@ -706,6 +706,178 @@ h1 {
 }
 
 /* ============================================
+   Content Sections
+   ============================================ */
+.content-section {
+  max-width: 640px;
+  margin: 64px auto 0;
+  padding-top: 48px;
+  border-top: 1px solid var(--border);
+}
+
+.content-section h2 {
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.3px;
+  color: var(--text);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--text-secondary);
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+/* How it works steps */
+.steps {
+  display: flex;
+  gap: 24px;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #007aff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.step h3 {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.step p {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Platform grid */
+.platform-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.platform-item {
+  padding: 16px;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.platform-item strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.platform-item p {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* Tag list */
+.tag-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tag-group h3 {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+
+.tag-group code {
+  display: inline-block;
+  background: #f0f0f2;
+  color: #1d1d1f;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin: 0 4px 6px 0;
+  font-family: "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* FAQ */
+.faq-section details {
+  border-bottom: 1px solid var(--border);
+  padding: 16px 0;
+}
+
+.faq-section details:first-of-type {
+  border-top: 1px solid var(--border);
+}
+
+.faq-section summary {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text);
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-section summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-section summary::after {
+  content: '+';
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+
+.faq-section details[open] summary::after {
+  content: '\2212';
+}
+
+.faq-section details p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.faq-section details a {
+  color: #007aff;
+  text-decoration: none;
+}
+
+.faq-section details a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================
    No-image fallbacks
    ============================================ */
 .no-image {
@@ -754,6 +926,15 @@ h1 {
   .imessage-card,
   .whatsapp-card {
     max-width: 100%;
+  }
+
+  .steps {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .platform-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -816,22 +997,22 @@ h1 {
 }
 
 .footer-seo {
-  color: #c7c7cc;
-  font-size: 12px;
+  color: #a1a1a6;
+  font-size: 13px;
   line-height: 1.7;
 }
 
 .footer-seo h2 {
-  font-size: 14px;
-  font-weight: 500;
-  color: #a1a1a6;
+  font-size: 15px;
+  font-weight: 600;
+  color: #86868b;
   margin-bottom: 8px;
 }
 
 .footer-seo h3 {
-  font-size: 12px;
-  font-weight: 500;
-  color: #a1a1a6;
+  font-size: 13px;
+  font-weight: 600;
+  color: #86868b;
   margin-top: 16px;
   margin-bottom: 4px;
 }
